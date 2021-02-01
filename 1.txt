@@ -1,0 +1,38 @@
+import React from 'react'
+
+function App() {
+  
+  constructor() {
+    super();
+     
+     this.state = {
+       tasks: [
+         {id: 0, title: 'Create tofo-react app', done: false}
+       ]  
+     };
+  }
+      
+    render() {
+       const { tasks } = this.state;
+  
+  return (
+    
+    <div className="container" align="center">
+     <div><p align="left">Время</p></div>
+      
+      
+
+     <div> <h4>Всего задач: {tasks.length} </h4>  <p align="right">Выполненые задачи</p> </div>
+    
+     <div className="task"> <ul> 1 </ul> </div>
+
+     <div className="basement"> <p align="right"><img src="img/plus.png"></img> </p> </div>
+
+
+   </div>
+   
+  )
+  
+}
+
+export default App;
