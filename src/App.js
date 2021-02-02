@@ -6,21 +6,24 @@ class App extends React.Component{
      
      this.state = {
        tasks: [
-         {id: 0, title: 'taskc', done: false}
+         {id: 0, title: 'не выполнено', done: false},
+         {id: 1, title: 'выполнено', done: true},
+         {id: 2, title: 'не выполнено', done: false}
        ]  
      };
   }
       
     render() {
        const { tasks } = this.state;
-
+       const activeTasks = tasks.filter(task => !task.done);
+       const doneTasks = tasks.filter(task => task.done);
 
       return (
         <div className="container" align="center">
            <div align="left">
-             <h1>Всего задач: {tasks.length} </h1> 
+             <h1>Всего задач: {activeTasks.length} </h1> 
            </div>
-              {tasks.map(task => (
+              {[...activeTasks, ...doneTasks].map(task => (
                <Task task={task} key={task.id}></Task>
               ))}
         </div>
