@@ -36,3 +36,23 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+<ActionBit></ActionBit>
+
+
+ const ActionBit = () => (
+   <div>{!task.done
+     ? <p onClick={props.doneTask}> ✅ </p>
+     : <p onClick={props.deleteTask}> ❌ </p>
+   }
+   </div>
+   );
+   
+   const className = 'task ' + (task.done ? 'task-done' : '');
+   
+   
