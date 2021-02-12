@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Task from './component/Task';
+import TaskInput from './component/TaskInput';
+
 
 
 function App(){
@@ -33,6 +35,18 @@ function App(){
 
   const activeTasks = tasks.filter(task => !task.done);
   const doneTasks = tasks.filter(task => task.done);
+
+  addTask = task => {
+  this.setState(state => {
+    let { tasks } = state;
+    tasks.push({
+      id: tasks.length !== 0 ? task.length : 0,
+      title: task,
+      done: false
+    });
+  });
+ };
+
 
   return (
     <div className="container">
@@ -69,6 +83,7 @@ function App(){
             task={task}
             key={task.id}/>
         ))}
+        <TaskInput addTask={this.addTask}></TaskInput>
          </div>
 
    </div>
